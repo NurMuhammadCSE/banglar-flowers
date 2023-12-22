@@ -29,41 +29,41 @@ const Category = () => {
         <Link to="/lily">
           <SwiperSlide>
             <img src={slide1} alt="" />
-            <h3 className="text-4xl uppercase text-center -mt-16 text-white">
+            {/* <h3 className="text-4xl uppercase text-center -mt-16 text-white">
               Salads
-            </h3>
+            </h3> */}
           </SwiperSlide>
         </Link>
         <Link to="/your-route1">
           <SwiperSlide>
             <img src={slide2} alt="" />
-            <h3 className="text-4xl uppercase text-center -mt-16 text-white">
+            {/* <h3 className="text-4xl uppercase text-center -mt-16 text-white">
               Pizzas
-            </h3>
+            </h3> */}
           </SwiperSlide>
         </Link>
         <Link to="/your-route2">
           <SwiperSlide>
             <img src={slide3} alt="" />
-            <h3 className="text-4xl uppercase text-center -mt-16 text-white">
+            {/* <h3 className="text-4xl uppercase text-center -mt-16 text-white">
               Soups
-            </h3>
+            </h3> */}
           </SwiperSlide>
         </Link>
         <Link to="/your-route2">
           <SwiperSlide>
             <img src={slide3} alt="" />
-            <h3 className="text-4xl uppercase text-center -mt-16 text-white">
+            {/* <h3 className="text-4xl uppercase text-center -mt-16 text-white">
               Soups
-            </h3>
+            </h3> */}
           </SwiperSlide>
         </Link>
         <Link to="/your-route2">
           <SwiperSlide>
             <img src={slide3} alt="" />
-            <h3 className="text-4xl uppercase text-center -mt-16 text-white">
+            {/* <h3 className="text-4xl uppercase text-center -mt-16 text-white">
               Soups
-            </h3>
+            </h3> */}
           </SwiperSlide>
         </Link>
         {/* Repeat the pattern for other slides */}

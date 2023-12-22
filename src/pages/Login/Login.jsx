@@ -123,7 +123,7 @@ const Login = () => {
             </form>
             <p className="mb-8 ml-6 font-semibold text-2xl">
               <small>
-                New Here? <Link to="/signup">Create an account</Link>{" "}
+                New Here? <Link className="text-green-500" to="/signup">Create an account</Link>{" "}
               </small>
             </p>
           </div>
