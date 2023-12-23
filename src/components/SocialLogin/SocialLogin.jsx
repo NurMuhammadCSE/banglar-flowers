@@ -24,7 +24,7 @@ const SocialLogin = () => {
         },
         body: JSON.stringify(userInfo),
       }).then((res) => {
-        console.log(res.data);
+        console.log(res);
         navigate(from, { replace: true });
       });
     });

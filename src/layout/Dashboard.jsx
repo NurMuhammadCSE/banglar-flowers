@@ -10,12 +10,15 @@ import {
 import { useCart } from "../hooks/useCart";
 import { GiFlowerPot } from "react-icons/gi";
 import { MdOutlineMenuBook } from "react-icons/md";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   const [cart] = useCart();
 
   // TODO:
-  const isAdmin = true;
+  // const isAdmin = true;
+
+  const [isAdmin] = useAdmin()
 
   return (
     <div className="drawer md:drawer-open">

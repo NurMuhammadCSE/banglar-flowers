@@ -10,10 +10,15 @@ export const useCart = () => {
   const { refetch, data: cart = [] } = useQuery({
     queryKey: ["cart", user?.email],
     queryFn: async () => {
+      if (!user?.email) {
+        return [];
+      }
       const res = await fetch(
         `http://localhost:5000/carts?email=${user?.email}`,
         {
-          headers: `Bearer ${token}`,
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
         }
       );
       return res.json();
