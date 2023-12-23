@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProviders";
 import signup from "../../assets/signup.jpg";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
@@ -63,7 +64,7 @@ const Login = () => {
         <div className="hero-content flex-col md:flex-row-reverse">
           <div className="text-center md:w-1/2 lg:text-left">
             <p className="py-6">
-            <img
+              <img
                 src={signup}
                 className="max-w-lg rounded-lg shadow-2xl"
                 alt=""
@@ -121,9 +122,16 @@ const Login = () => {
                 />
               </div>
             </form>
+
+            <div>
+              <SocialLogin></SocialLogin>
+            </div>
             <p className="mb-8 ml-6 font-semibold text-2xl">
               <small>
-                New Here? <Link className="text-green-500" to="/signup">Create an account</Link>{" "}
+                New Here?{" "}
+                <Link className="text-green-500" to="/signup">
+                  Create an account
+                </Link>{" "}
               </small>
             </p>
           </div>

@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProviders";
 
 import signup from "../../assets/signup.jpg";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const {
@@ -28,7 +29,7 @@ const SignUp = () => {
           // console.log("user profile info updated");
 
           const saveUser = {name: data.name, email: data.email}
-          fetch("http://localhost:5000/user", {
+          fetch("http://localhost:5000/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -165,6 +166,8 @@ const SignUp = () => {
                 />
               </div>
             </form>
+
+            <SocialLogin></SocialLogin>
             <p className="mb-8 ml-6 font-semibold text-2xl">
               <small>
                 Already have an account?{" "}
