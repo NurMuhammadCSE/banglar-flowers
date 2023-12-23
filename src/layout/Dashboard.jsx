@@ -4,11 +4,19 @@ import {
   FaWallet,
   FaCalendarAlt,
   FaHome,
+  FaBook,
+  FaUsers,
 } from "react-icons/fa";
 import { useCart } from "../hooks/useCart";
+import { GiFlowerPot } from "react-icons/gi";
+import { MdOutlineMenuBook } from "react-icons/md";
 
 const Dashboard = () => {
-    const [cart] = useCart()
+  const [cart] = useCart();
+
+  // TODO:
+  const isAdmin = true;
+
   return (
     <div className="drawer md:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -29,29 +37,58 @@ const Dashboard = () => {
           className="drawer-overlay"
         ></label>
         <ul className="menu p-4 w-80">
-          <li>
-            <NavLink to="/dashboard/home">
-              <FaHome></FaHome> User Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/reservations">
-              <FaCalendarAlt></FaCalendarAlt> Reservations
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/history">
-              <FaWallet></FaWallet> Payment History
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/mycart">
-              <FaShoppingCart></FaShoppingCart> My Cart
-              <span className="badge inl badge-secondary">
-                +{cart?.length || 0}
-              </span>
-            </NavLink>
-          </li>
+          {isAdmin ? (
+            <>
+              <li>
+                <NavLink to="/dashboard/home">
+                  <FaHome></FaHome> Admin Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/reservations">
+                  <GiFlowerPot />
+                  Add Item
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/history">
+                  <FaBook></FaBook> Manage Items
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/allusers">
+                  <FaUsers></FaUsers> All Users
+                </NavLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/dashboard/home">
+                  <FaHome></FaHome> User Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/reservations">
+                  <FaCalendarAlt></FaCalendarAlt> Reservations
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/history">
+                  <FaWallet></FaWallet> Payment History
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/mycart">
+                  <FaShoppingCart></FaShoppingCart> My Cart
+                  <span className="badge inl badge-secondary">
+                    +{cart?.length || 0}
+                  </span>
+                </NavLink>
+              </li>
+            </>
+          )}
+
           <div className="divider"></div>
           <li>
             <NavLink to="/">
@@ -59,10 +96,17 @@ const Dashboard = () => {
             </NavLink>{" "}
           </li>
           <li>
-            <NavLink to="/menu"> Our Menu</NavLink>
+            <NavLink to="/menu">
+              <MdOutlineMenuBook />
+              Our Menu
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/order/salad">Order Food</NavLink>
+            <NavLink to="/order/salad">
+              {" "}
+              <GiFlowerPot />
+              Order Flower
+            </NavLink>
           </li>
         </ul>
       </div>
