@@ -13,7 +13,7 @@ export const useCart = () => {
       const res = await fetch(
         `http://localhost:5000/carts?email=${user?.email}`,
         {
-          headers: `bearer ${token}`,
+          headers: `Bearer ${token}`,
         }
       );
       return res.json();
