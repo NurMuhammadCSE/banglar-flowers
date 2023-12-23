@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  deleteUser,
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -36,6 +37,11 @@ const AuthProviders = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  const removeUser = (user) => {
+    setLoading(true)
+    return deleteUser(user)
+  }
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
@@ -56,6 +62,7 @@ const AuthProviders = ({ children }) => {
     updateUserProfile,
     googleSignIn,
     login,
+    removeUser
   };
 
   useEffect(() => {

@@ -3,9 +3,11 @@ import { FaUserShield } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAuth from "../../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const AllUsers = () => {
-  const [axiosSecure] = useAxiosSecure()
+  const [axiosSecure] = useAxiosSecure();
   // const { data: users = [], refetch } = useQuery({
   //   queryKey: ["users"],
   //   queryFn: async () => {
@@ -13,6 +15,9 @@ const AllUsers = () => {
   //     return res.json();
   //   },
   // });
+
+  const { removeUser } = useAuth();
+  const navigate = useNavigate();
 
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
@@ -61,6 +66,14 @@ const AllUsers = () => {
             if (data.deletedCount > 0) {
               refetch();
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+
+              // removeUser(user)
+              //   .then(() => {
+              //     navigate('/dashboard/allusers')
+              //   })
+              //   .catch((error) => {
+              //     console.log(error.message);
+              //   });
             }
           });
       }
@@ -74,6 +87,7 @@ const AllUsers = () => {
         <table className="table">
           <thead>
             <tr>
+              
               <th>#</th>
               <th>Name</th>
               <th>Email</th>
