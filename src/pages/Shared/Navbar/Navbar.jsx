@@ -37,7 +37,7 @@ const Navbar = () => {
           <li>
             <Link>
               <div className="avatar">
-                <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="w-10 rounded-full ring ring-primary ring-offset-2">
                   <img src={user?.photoURL} />
                 </div>
               </div>

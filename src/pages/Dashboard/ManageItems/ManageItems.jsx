@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import useFlowers from "../../../hooks/useFlowers";
+import { FaEdit } from "react-icons/fa";
 
 const ManageItems = () => {
   const [flowers, , refetch] = useFlowers();
@@ -67,10 +68,9 @@ const ManageItems = () => {
                     </div>
                   </div>
                 </td>
-                <td>{item.category}</td>
-                <td className="text-right">${item.price}</td>
+                <td>${item.price}</td>
                 <td>
-                  <button className="btn btn-ghost btn-xs">details</button>
+                  <button className="btn btn-ghost bg-green-600  text-white"><FaEdit /></button>
                 </td>
                 <td>
                   <button

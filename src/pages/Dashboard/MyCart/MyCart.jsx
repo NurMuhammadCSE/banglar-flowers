@@ -5,6 +5,9 @@ import Swal from "sweetalert2";
 
 const MyCart = () => {
   const [cart, refetch] = useCart();
+  const total2 = Array.isArray(cart)
+    ? cart.reduce((sum, item) => item.price + sum, 0)
+    : 0;
   const total = cart.reduce((sum, item) => item.price + sum, 0);
 
   const handleDelete = (item) => {
@@ -39,7 +42,9 @@ const MyCart = () => {
       </Helmet>
       <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
         <h3 className="text-3xl">Total Items: {cart.length}</h3>
-        <h3 className="text-3xl">Total Price: ${parseFloat(total).toFixed(2)}</h3>
+        <h3 className="text-3xl">
+          Total Price: ${parseFloat(total).toFixed(2)}
+        </h3>
         <button className="btn btn-warning btn-sm">PAY</button>
       </div>
 

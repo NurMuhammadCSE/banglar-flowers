@@ -28,11 +28,10 @@ const AddItem = () => {
             price: parseFloat(price),
             details,
             image: imgURL,
-            rating
+            rating,
           };
-          console.log(newItem);
           axiosSecure.post("/flower", newItem).then((data) => {
-            console.log("after posting new menu item", data.data);
+            // console.log("after posting new menu item", data.data);
             if (data.data.insertedId) {
               reset();
               Swal.fire({
@@ -66,18 +65,16 @@ const AddItem = () => {
             className="input input-bordered w-full "
           />
         </div>
-        <div className="flex my-4">
-          <div className="form-control w-full ml-4">
-            <label className="label">
-              <span className="label-text font-semibold">Price*</span>
-            </label>
-            <input
-              type="number"
-              {...register("price", { required: true })}
-              placeholder="Type here"
-              className="input input-bordered w-full "
-            />
-          </div>
+        <div className="form-control w-full ml-4">
+          <label className="label">
+            <span className="label-text font-semibold">Price*</span>
+          </label>
+          <input
+            type="number"
+            {...register("price", { required: true })}
+            placeholder="Type here"
+            className="input input-bordered w-full "
+          />
         </div>
         <div className="flex my-4">
           <div className="form-control w-full ml-4">
@@ -112,7 +109,7 @@ const AddItem = () => {
             className="file-input file-input-bordered w-full "
           />
         </div>
-        <input className="btn btn-sm mt-4" type="submit" value="Add Item" />
+        <input className="btn btn-ghost mt-4" type="submit" value="Add Item" />
       </form>
     </div>
   );

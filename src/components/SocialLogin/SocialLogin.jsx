@@ -31,7 +31,7 @@ const SocialLogin = () => {
   };
 
   return (
-    <div className="p-8 ">
+    <div className="">
       <div className="divider"></div>
       <div className="flex justify-center mx-auto">
         <button onClick={handleGoogleSignIn} className="btn">

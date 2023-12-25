@@ -123,9 +123,7 @@ const Login = () => {
               </div>
             </form>
 
-            <div>
               <SocialLogin></SocialLogin>
-            </div>
             <p className="mb-8 ml-6 font-semibold text-2xl">
               <small>
                 New Here?{" "}
